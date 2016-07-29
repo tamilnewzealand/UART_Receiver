@@ -1,0 +1,30 @@
+|Group_16
+clk => CS~1.DATAIN
+reset => ~NO_FANOUT~
+rx => Selector0.IN3
+rx => Selector1.IN3
+rx => Selector6.IN1
+buf[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+buf[1] <= buf[1].DB_MAX_OUTPUT_PORT_TYPE
+buf[2] <= buf[2].DB_MAX_OUTPUT_PORT_TYPE
+buf[3] <= buf[3].DB_MAX_OUTPUT_PORT_TYPE
+buf[4] <= buf[4].DB_MAX_OUTPUT_PORT_TYPE
+buf[5] <= buf[5].DB_MAX_OUTPUT_PORT_TYPE
+buf[6] <= buf[6].DB_MAX_OUTPUT_PORT_TYPE
+buf[7] <= buf[7].DB_MAX_OUTPUT_PORT_TYPE
+reset_N <= <VCC>
+reset_S <= reset_S$latch.DB_MAX_OUTPUT_PORT_TYPE
+enable_N <= <VCC>
+enable_S <= <VCC>
+enable_shift <= <VCC>
+cmp15_s => Selector3.IN3
+cmp15_s => Output_logic.IN0
+cmp15_s => Output_logic.IN0
+cmp15_s => Selector0.IN2
+cmp7_s => Selector2.IN3
+cmp7_s => Selector7.IN3
+cmp7_s => Selector1.IN2
+cmp7_n => Output_logic.IN1
+cmp7_n => Output_logic.IN1
+
+
