@@ -1,30 +1,124 @@
 |Group_16
+buf[0] <= shift_reg:inst8.buf[0]
+buf[1] <= shift_reg:inst8.buf[1]
+buf[2] <= shift_reg:inst8.buf[2]
+buf[3] <= shift_reg:inst8.buf[3]
+buf[4] <= shift_reg:inst8.buf[4]
+buf[5] <= shift_reg:inst8.buf[5]
+buf[6] <= shift_reg:inst8.buf[6]
+buf[7] <= shift_reg:inst8.buf[7]
+clk => shift_reg:inst8.clk
+clk => fsm:inst.clk
+clk => s_counter:inst7.clk
+clk => n_counter:inst6.clk
+rx => fsm:inst.rx
+rx => shift_reg:inst8.rx
+
+
+|Group_16|shift_reg:inst8
+clk => buf[0]~reg0.CLK
+clk => buf[1]~reg0.CLK
+clk => buf[2]~reg0.CLK
+clk => buf[3]~reg0.CLK
+clk => buf[4]~reg0.CLK
+clk => buf[5]~reg0.CLK
+clk => buf[6]~reg0.CLK
+clk => buf[7]~reg0.CLK
+enable_shift => buf[0]~reg0.ENA
+enable_shift => buf[1]~reg0.ENA
+enable_shift => buf[2]~reg0.ENA
+enable_shift => buf[3]~reg0.ENA
+enable_shift => buf[4]~reg0.ENA
+enable_shift => buf[5]~reg0.ENA
+enable_shift => buf[6]~reg0.ENA
+enable_shift => buf[7]~reg0.ENA
+rx => buf[7]~reg0.DATAIN
+buf[0] <= buf[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[1] <= buf[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[2] <= buf[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[3] <= buf[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[4] <= buf[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[5] <= buf[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[6] <= buf[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[7] <= buf[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Group_16|fsm:inst
 clk => CS~1.DATAIN
-reset => ~NO_FANOUT~
-rx => Selector0.IN3
+rx => Selector0.IN2
 rx => Selector1.IN3
 rx => Selector6.IN1
-buf[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-buf[1] <= buf[1].DB_MAX_OUTPUT_PORT_TYPE
-buf[2] <= buf[2].DB_MAX_OUTPUT_PORT_TYPE
-buf[3] <= buf[3].DB_MAX_OUTPUT_PORT_TYPE
-buf[4] <= buf[4].DB_MAX_OUTPUT_PORT_TYPE
-buf[5] <= buf[5].DB_MAX_OUTPUT_PORT_TYPE
-buf[6] <= buf[6].DB_MAX_OUTPUT_PORT_TYPE
-buf[7] <= buf[7].DB_MAX_OUTPUT_PORT_TYPE
 reset_N <= <VCC>
 reset_S <= reset_S$latch.DB_MAX_OUTPUT_PORT_TYPE
 enable_N <= <VCC>
 enable_S <= <VCC>
 enable_shift <= <VCC>
+cmp15_s => Selector0.IN3
+cmp15_s => Output_logic.IN0
+cmp15_s => Output_logic.IN0
 cmp15_s => Selector3.IN3
-cmp15_s => Output_logic.IN0
-cmp15_s => Output_logic.IN0
-cmp15_s => Selector0.IN2
 cmp7_s => Selector2.IN3
 cmp7_s => Selector7.IN3
 cmp7_s => Selector1.IN2
 cmp7_n => Output_logic.IN1
 cmp7_n => Output_logic.IN1
+
+
+|Group_16|s_comp_15:inst4
+s_cnt[0] => Equal0.IN3
+s_cnt[1] => Equal0.IN2
+s_cnt[2] => Equal0.IN1
+s_cnt[3] => Equal0.IN0
+cmp15_s <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Group_16|s_counter:inst7
+clk => s_cnt[0]~reg0.CLK
+clk => s_cnt[1]~reg0.CLK
+clk => s_cnt[2]~reg0.CLK
+clk => s_cnt[3]~reg0.CLK
+reset_S => s_cnt.OUTPUTSELECT
+reset_S => s_cnt.OUTPUTSELECT
+reset_S => s_cnt.OUTPUTSELECT
+reset_S => s_cnt.OUTPUTSELECT
+reset_S => process_0.IN0
+enable_S => process_0.IN1
+s_cnt[0] <= s_cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s_cnt[1] <= s_cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s_cnt[2] <= s_cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s_cnt[3] <= s_cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Group_16|s_comp_7:inst3
+s_cnt[0] => Equal0.IN3
+s_cnt[1] => Equal0.IN2
+s_cnt[2] => Equal0.IN1
+s_cnt[3] => Equal0.IN0
+cmp7_s <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Group_16|n_comp_7:inst2
+n_cnt[0] => Equal0.IN3
+n_cnt[1] => Equal0.IN2
+n_cnt[2] => Equal0.IN1
+n_cnt[3] => Equal0.IN0
+cmp7_n <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Group_16|n_counter:inst6
+clk => n_cnt[0]~reg0.CLK
+clk => n_cnt[1]~reg0.CLK
+clk => n_cnt[2]~reg0.CLK
+clk => n_cnt[3]~reg0.CLK
+reset_N => n_cnt.OUTPUTSELECT
+reset_N => n_cnt.OUTPUTSELECT
+reset_N => n_cnt.OUTPUTSELECT
+reset_N => n_cnt.OUTPUTSELECT
+reset_N => process_0.IN0
+enable_N => process_0.IN1
+n_cnt[0] <= n_cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+n_cnt[1] <= n_cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+n_cnt[2] <= n_cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+n_cnt[3] <= n_cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

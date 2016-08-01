@@ -1,6 +1,6 @@
 EDA Netlist Writer report for Group_16
-Fri Jul 29 12:42:53 2016
-Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Mon Aug 01 19:04:40 2016
+Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Jul 29 12:42:53 2016 ;
+; EDA Netlist Writer Status ; Successful - Mon Aug 01 19:04:40 2016 ;
 ; Revision Name             ; Group_16                              ;
 ; Top-level Entity Name     ; Group_16                              ;
 ; Family                    ; Cyclone III                           ;
@@ -78,7 +78,7 @@ applicable agreement for further details.
 ; EDA Netlist Writer Messages ;
 +-----------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit EDA Netlist Writer
+Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
     Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
     Info: Your use of Altera Corporation's design tools, logic functions 
@@ -93,13 +93,13 @@ Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: programming logic devices manufactured by Altera and sold by 
     Info: Altera or its authorized distributors.  Please refer to the 
     Info: applicable agreement for further details.
-    Info: Processing started: Fri Jul 29 12:42:52 2016
+    Info: Processing started: Mon Aug 01 19:04:38 2016
 Info: Command: quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/WindowsUser/Documents/GitHub/UART_Receiver/simulation/qsim/ UART_Design -c Group_16
 Info (204019): Generated file Group_16.vo in folder "C:/Users/WindowsUser/Documents/GitHub/UART_Receiver/simulation/qsim//" for EDA simulation tool
-Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 428 megabytes
-    Info: Processing ended: Fri Jul 29 12:42:53 2016
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 372 megabytes
+    Info: Processing ended: Mon Aug 01 19:04:40 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

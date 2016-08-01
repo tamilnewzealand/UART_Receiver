@@ -156,7 +156,7 @@ begin
 		begin
 			if rising_edge(clk) then
 				if enable_shift = '1' then
-					buf <= rx & buf(6 DOWNTO 0);
+					buf(7 DOWNTO 0) <= rx & buf(7 DOWNTO 1);
 				end if;
 			end if;
 	end process;
@@ -170,18 +170,17 @@ end beh;
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity Group_16 is
+entity fsm is
 	port (
-		clk, reset	:	in	std_logic;
+		clk			:	in	std_logic;
 		rx				:	in std_logic;
-		buf			:	out std_logic_vector(7 DOWNTO 0);
 		reset_N, reset_S, enable_N, enable_S, enable_shift : out std_logic;
 		cmp15_s, cmp7_s, cmp7_n : in std_logic);
 end entity;
 
 --Define architecture here 
 
-architecture beh of Group_16 is
+architecture beh of fsm is
 
 	type my_states is (idle, start, data, stop);
 	signal CS, NS : my_states:= idle;
@@ -193,7 +192,7 @@ begin
 	----------------------------
 
 	--state registers
-	Synchronous_process: process (reset, clk)
+	Synchronous_process: process (clk)
 		begin
 			if rising_edge(clk) then
 				CS <= NS;
@@ -225,9 +224,9 @@ begin
 					end if;
 				when stop =>
 					if cmp15_s = '0' then
-						NS <= idle;
-					else
 						NS <= stop;
+					else
+						NS <= idle;
 					end if;
 			end case;
 	end process;
@@ -255,7 +254,7 @@ begin
 						reset_S <= '1';
 						enable_shift <= '1';
 					elsif (cmp7_n = '0' AND cmp15_s = '1') then
-						enable_S <= '1';
+						enable_shift <= '1';
 						reset_S <= '1';
 						enable_N <= '1';
 					else

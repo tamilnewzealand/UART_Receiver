@@ -1,5 +1,5 @@
 
-State Machine - |Group_16|CS
+State Machine - |Group_16|fsm:inst|CS
 Name CS.stop CS.data CS.start CS.idle 
 CS.idle 0 0 0 0 
 CS.start 0 0 1 1 
