@@ -4,42 +4,42 @@ K3
 cModel Technology
 Z0 dC:\Users\WindowsUser\Documents\GitHub\UART_Receiver\simulation\qsim
 vGroup_16
-Z1 IGU84@J9Y2jTmi5;5Q^;lD1
-Z2 VoeKa60EKX0]SCVg:QI5ac3
-Z3 dC:\Users\WindowsUser\Documents\GitHub\UART_Receiver\simulation\qsim
-Z4 w1470035080
-Z5 8Group_16.vo
-Z6 FGroup_16.vo
+Z1 !s100 SeAU8eDz:@L>le1lF8?YD0
+Z2 IGU84@J9Y2jTmi5;5Q^;lD1
+Z3 VoeKa60EKX0]SCVg:QI5ac3
+Z4 dD:\UART_Receiver\simulation\qsim
+Z5 w1470257662
+Z6 8Group_16.vo
+Z7 FGroup_16.vo
 L0 31
-Z7 OV;L;10.1d;51
+Z8 OV;L;10.1d;51
 r1
 31
-Z8 !s90 -work|work|Group_16.vo|
-Z9 o-work work -O0
-Z10 n@group_16
+Z9 !s90 -work|work|Group_16.vo|
+Z10 o-work work -O0
+Z11 n@group_16
 !i10b 1
-Z11 !s100 SeAU8eDz:@L>le1lF8?YD0
 !s85 0
-Z12 !s108 1470035082.196000
+Z12 !s108 1470257835.052000
 Z13 !s107 Group_16.vo|
 !s101 -O0
 vGroup_16_vlg_sample_tst
 !i10b 1
-Z14 !s100 czTlmTV94OXc9V2MjUeVS0
-Z15 I[S^<jHE5lLAoBj0g645PZ1
-Z16 VkRkVkmHZ?312Zk0I]`ZVC2
-R3
-w1470035076
-Z17 8Waveform.vwf.vt
-Z18 FWaveform.vwf.vt
+!s100 hKc21:l?9Z=>DTn5f^zOR3
+IoGo@zg5f>FKnH=BVh1J[j3
+Z14 VkRkVkmHZ?312Zk0I]`ZVC2
+R4
+w1470257833
+8UART_Design.vt
+FUART_Design.vt
 L0 29
-R7
+R8
 r1
 !s85 0
 31
-!s108 1470035082.349000
-!s107 Waveform.vwf.vt|
-Z19 !s90 -work|work|Waveform.vwf.vt|
+!s108 1470257835.222000
+!s107 UART_Design.vt|
+!s90 -work|work|UART_Design.vt|
 !s101 -O0
-R9
-Z20 n@group_16_vlg_sample_tst
+R10
+Z15 n@group_16_vlg_sample_tst

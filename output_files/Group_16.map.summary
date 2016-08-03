@@ -1,14 +1,7 @@
-Analysis & Synthesis Status : Successful - Mon Aug 01 19:02:34 2016
-Quartus II 32-bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Analysis & Synthesis Status : Successful - Thu Aug 04 10:40:08 2016
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
 Revision Name : Group_16
 Top-level Entity Name : Group_16
-Family : Cyclone III
-Total logic elements : 8
-    Total combinational functions : 0
-    Dedicated logic registers : 8
-Total registers : 8
+Family : MAX7000AE
+Total macrocells : 8
 Total pins : 10
-Total virtual pins : 0
-Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
