@@ -56,7 +56,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 CHIP  "Group_16"  ASSIGNED TO AN: EPM7064AELC44-10
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -64,27 +64,27 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 GND+                         : 1         :        :                   :         :           :                
 GND+                         : 2         :        :                   :         :           :                
 VCCINT                       : 3         : power  :                   : 3.3V    :           :                
-buf[1]                       : 4         : output : 3.3-V LVTTL       :         :           : N              
-buf[2]                       : 5         : output : 3.3-V LVTTL       :         :           : N              
-buf[3]                       : 6         : output : 3.3-V LVTTL       :         :           : N              
+segment[0]                   : 4         : output : 3.3-V LVTTL       :         :           : Y              
+segment[1]                   : 5         : output : 3.3-V LVTTL       :         :           : Y              
+segment[2]                   : 6         : output : 3.3-V LVTTL       :         :           : Y              
 TDI                          : 7         : input  : 3.3-V LVTTL       :         :           : N              
-buf[4]                       : 8         : output : 3.3-V LVTTL       :         :           : N              
-buf[5]                       : 9         : output : 3.3-V LVTTL       :         :           : N              
+segment[3]                   : 8         : output : 3.3-V LVTTL       :         :           : Y              
+segment[4]                   : 9         : output : 3.3-V LVTTL       :         :           : Y              
 GND                          : 10        : gnd    :                   :         :           :                
-buf[6]                       : 11        : output : 3.3-V LVTTL       :         :           : N              
-buf[7]                       : 12        : output : 3.3-V LVTTL       :         :           : N              
+segment[5]                   : 11        : output : 3.3-V LVTTL       :         :           : Y              
+segment[6]                   : 12        : output : 3.3-V LVTTL       :         :           : Y              
 TMS                          : 13        : input  : 3.3-V LVTTL       :         :           : N              
-GND*                         : 14        :        :                   :         :           :                
+decptn                       : 14        : output : 3.3-V LVTTL       :         :           : Y              
 VCCIO                        : 15        : power  :                   : 3.3V    :           :                
-GND*                         : 16        :        :                   :         :           :                
-GND*                         : 17        :        :                   :         :           :                
-GND*                         : 18        :        :                   :         :           :                
-GND*                         : 19        :        :                   :         :           :                
+digit[0]                     : 16        : output : 3.3-V LVTTL       :         :           : Y              
+digit[1]                     : 17        : output : 3.3-V LVTTL       :         :           : Y              
+digit[2]                     : 18        : output : 3.3-V LVTTL       :         :           : Y              
+digit[3]                     : 19        : output : 3.3-V LVTTL       :         :           : Y              
 GND*                         : 20        :        :                   :         :           :                
-buf[0]                       : 21        : output : 3.3-V LVTTL       :         :           : N              
+GND*                         : 21        :        :                   :         :           :                
 GND                          : 22        : gnd    :                   :         :           :                
 VCCINT                       : 23        : power  :                   : 3.3V    :           :                
-GND*                         : 24        :        :                   :         :           :                
+rx                           : 24        : input  : 3.3-V LVTTL       :         :           : Y              
 GND*                         : 25        :        :                   :         :           :                
 GND*                         : 26        :        :                   :         :           :                
 GND*                         : 27        :        :                   :         :           :                
@@ -101,7 +101,7 @@ GND*                         : 37        :        :                   :         
 TDO                          : 38        : output : 3.3-V LVTTL       :         :           : N              
 GND*                         : 39        :        :                   :         :           :                
 GND*                         : 40        :        :                   :         :           :                
-rx                           : 41        : input  : 3.3-V LVTTL       :         :           : N              
+GND*                         : 41        :        :                   :         :           :                
 GND                          : 42        : gnd    :                   :         :           :                
-clk                          : 43        : input  : 3.3-V LVTTL       :         :           : N              
+clk                          : 43        : input  : 3.3-V LVTTL       :         :           : Y              
 GND+                         : 44        :        :                   :         :           :                

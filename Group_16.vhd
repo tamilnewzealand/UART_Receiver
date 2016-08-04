@@ -1,5 +1,5 @@
 -- ELECTENG 209 UART_ Receiver
--- Last Edit: 2016/07/29
+-- Last Edit: 2016/08/04
 
 -------------------------------------------------------
 -----------            S Counter            -----------
@@ -162,6 +162,57 @@ begin
 	end process;
 end beh;
 
+-------------------------------------------------------
+-----------             BCD2SSD             -----------
+-------------------------------------------------------
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity BCD2SSD is
+port(
+	clk : in std_logic;
+	bcd : in std_logic_vector(7 downto 0);
+	segment7 : out std_logic_vector(6 downto 0);
+	decptn	:	out std_logic;
+	digit : out std_logic_vector(3 downto 0));
+end BCD2SSD;
+
+architecture beh of BCD2SSD is
+	signal SEG : std_logic_vector(1 downto 0);
+	signal DIS : std_logic_vector(3 downto 0);
+begin
+	process (clk,bcd)
+		begin
+			SEG(1 downto 0) <= bcd(6 downto 5);
+			DIS(3 downto 0) <= bcd(3 downto 0);
+			if rising_edge(clk) then
+				decptn <= bcd(4);
+				case SEG is
+					when "00"=> digit <="0001";
+					when "01"=> digit <="0010";
+					when "10"=> digit <="0100";
+					when "11"=> digit <="1000";
+					when others=> digit <="0000";
+				end case;
+				case DIS is
+					when "0000"=> segment7 <="0000001";
+					when "0001"=> segment7 <="1001111";
+					when "0010"=> segment7 <="0010010";
+					when "0011"=> segment7 <="0000110";
+					when "0100"=> segment7 <="1001100";
+					when "0101"=> segment7 <="0100100";
+					when "0110"=> segment7 <="0100000";
+					when "0111"=> segment7 <="0001111";
+					when "1000"=> segment7 <="0000000";
+					when "1001"=> segment7 <="0000100";
+					when others=> segment7 <="1111111";
+				end case;
+			end if;
+	end process;
+end beh;
 
 -------------------------------------------------------
 -----------               FSM               -----------
@@ -235,6 +286,11 @@ begin
 
 	Output_logic: process (CS)
 		begin
+		enable_shift <= '0';
+		reset_S <= '0';
+		reset_N <= '0';
+		enable_N <= '0';
+		enable_S <= '0';
 			case CS is
 				when idle =>
 					if rx = '0' then
@@ -263,6 +319,8 @@ begin
 				when stop =>
 					if cmp15_s = '0' then
 						enable_S <= '1';
+					else
+						enable_shift <= '0';
 					end if;
 			end case;
 	end process;
