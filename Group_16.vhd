@@ -176,7 +176,7 @@ port(
 	clk : in std_logic;
 	bcd : in std_logic_vector(7 downto 0);
 	segment7 : out std_logic_vector(6 downto 0);
-	decptn	:	out std_logic;
+	decpnt	:	out std_logic;
 	digit : out std_logic_vector(3 downto 0));
 end BCD2SSD;
 
@@ -189,7 +189,7 @@ begin
 			SEG(1 downto 0) <= bcd(6 downto 5);
 			DIS(3 downto 0) <= bcd(3 downto 0);
 			if rising_edge(clk) then
-				decptn <= bcd(4);
+				decpnt <= bcd(4);
 				case SEG is
 					when "00"=> digit <="0001";
 					when "01"=> digit <="0010";
