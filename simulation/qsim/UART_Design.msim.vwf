@@ -1267,9 +1267,8 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|segment[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 24560.0;
-		LEVEL 1 FOR 5120.0;
-		LEVEL 0 FOR 21520.0;
+		LEVEL 0 FOR 22000.0;
+		LEVEL 1 FOR 29200.0;
 	}
 }
 
@@ -1278,8 +1277,8 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|segment[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 27120.0;
-		LEVEL 1 FOR 24080.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 51120.0;
 	}
 }
 
@@ -1288,7 +1287,9 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|segment[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 27120.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 24480.0;
+		LEVEL 0 FOR 2560.0;
 		LEVEL 1 FOR 2560.0;
 		LEVEL 0 FOR 21520.0;
 	}
@@ -1299,9 +1300,10 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|segment[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 24560.0;
-		LEVEL 1 FOR 5120.0;
-		LEVEL 0 FOR 21520.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 24480.0;
+		LEVEL 0 FOR 5120.0;
+		LEVEL 1 FOR 21520.0;
 	}
 }
 
@@ -1310,8 +1312,8 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|segment[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 24560.0;
-		LEVEL 1 FOR 26640.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 51120.0;
 	}
 }
 
@@ -1320,8 +1322,8 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|segment[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 27120.0;
-		LEVEL 1 FOR 2560.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 29600.0;
 		LEVEL 0 FOR 21520.0;
 	}
 }
@@ -1332,10 +1334,9 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|segment[0]")
 	{
 		REPEAT = 1;
 		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 21920.0;
-		LEVEL 0 FOR 5120.0;
-		LEVEL 1 FOR 2560.0;
-		LEVEL 0 FOR 21520.0;
+		LEVEL 1 FOR 24480.0;
+		LEVEL 0 FOR 2560.0;
+		LEVEL 1 FOR 24080.0;
 	}
 }
 
@@ -2769,9 +2770,8 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|i1|inst1|segment7[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 24560.0;
-		LEVEL 1 FOR 5120.0;
-		LEVEL 0 FOR 21520.0;
+		LEVEL 0 FOR 22000.0;
+		LEVEL 1 FOR 29200.0;
 	}
 }
 
@@ -2780,8 +2780,8 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|i1|inst1|segment7[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 27120.0;
-		LEVEL 1 FOR 24080.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 51120.0;
 	}
 }
 
@@ -2790,7 +2790,9 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|i1|inst1|segment7[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 27120.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 24480.0;
+		LEVEL 0 FOR 2560.0;
 		LEVEL 1 FOR 2560.0;
 		LEVEL 0 FOR 21520.0;
 	}
@@ -2801,9 +2803,10 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|i1|inst1|segment7[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 24560.0;
-		LEVEL 1 FOR 5120.0;
-		LEVEL 0 FOR 21520.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 24480.0;
+		LEVEL 0 FOR 5120.0;
+		LEVEL 1 FOR 21520.0;
 	}
 }
 
@@ -2812,8 +2815,8 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|i1|inst1|segment7[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 24560.0;
-		LEVEL 1 FOR 26640.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 51120.0;
 	}
 }
 
@@ -2822,8 +2825,8 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|i1|inst1|segment7[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 27120.0;
-		LEVEL 1 FOR 2560.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 29600.0;
 		LEVEL 0 FOR 21520.0;
 	}
 }
@@ -2834,10 +2837,9 @@ TRANSITION_LIST("Group_16_vlg_vec_tst|i1|inst1|segment7[0]")
 	{
 		REPEAT = 1;
 		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 21920.0;
-		LEVEL 0 FOR 5120.0;
-		LEVEL 1 FOR 2560.0;
-		LEVEL 0 FOR 21520.0;
+		LEVEL 1 FOR 24480.0;
+		LEVEL 0 FOR 2560.0;
+		LEVEL 1 FOR 24080.0;
 	}
 }
 

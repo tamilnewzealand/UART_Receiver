@@ -198,17 +198,23 @@ begin
 					when others=> digit <="0000";
 				end case;
 				case DIS is
-					when "0000"=> segment7 <="0000001";
-					when "0001"=> segment7 <="1001111";
-					when "0010"=> segment7 <="0010010";
-					when "0011"=> segment7 <="0000110";
-					when "0100"=> segment7 <="1001100";
-					when "0101"=> segment7 <="0100100";
-					when "0110"=> segment7 <="0100000";
-					when "0111"=> segment7 <="0001111";
-					when "1000"=> segment7 <="0000000";
-					when "1001"=> segment7 <="0000100";
-					when others=> segment7 <="1111111";
+					when "0000"=> segment7 <="0111111";
+					when "0001"=> segment7 <="0000110";
+					when "0010"=> segment7 <="1011011";
+					when "0011"=> segment7 <="1001111";
+					when "0100"=> segment7 <="1100110";
+					when "0101"=> segment7 <="1101101";
+					when "0110"=> segment7 <="1111101";
+					when "0111"=> segment7 <="0000111";
+					when "1000"=> segment7 <="1111111";
+					when "1001"=> segment7 <="1101111";
+					when "1010"=> segment7 <="1110111";
+					when "1011"=> segment7 <="1111100";
+					when "1100"=> segment7 <="0111001";
+					when "1101"=> segment7 <="1011110";
+					when "1110"=> segment7 <="1111011";
+					when "1111"=> segment7 <="1110001";
+					when others=> segment7 <="0000000";
 				end case;
 			end if;
 	end process;
@@ -262,8 +268,10 @@ begin
 						NS <= idle;
 					end if;
 				when start =>
-					if cmp7_s = '1' then
+					if (cmp7_s = '1' AND rx = '0') then
 						NS <= data;
+					elsif (cmp15_s = '1') then
+						NS <= idle;
 					else
 						NS <= start;
 					end if;
@@ -302,6 +310,8 @@ begin
 					if cmp7_s = '1' then
 						reset_S <= '1';
 						reset_N <= '1';
+					elsif (cmp15_s = '1') then
+						reset_S <= '1';
 					else
 						enable_S <= '1';
 					end if;
