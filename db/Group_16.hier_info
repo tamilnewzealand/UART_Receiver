@@ -1,26 +1,27 @@
 |Group_16
-decptn <= BCD2SSD:inst1.decptn
-clk => BCD2SSD:inst1.clk
-clk => shift_reg:inst8.clk
+decptn <= BCD2SSD:inst10.decptn
+clk => BCD2SSD:inst10.clk
 clk => fsm:inst.clk
 clk => s_counter:inst7.clk
 clk => n_counter:inst6.clk
+clk => disp_register:inst1.clk
+clk => shift_reg:inst8.clk
 rx => fsm:inst.rx
 rx => shift_reg:inst8.rx
-digit[0] <= BCD2SSD:inst1.digit[0]
-digit[1] <= BCD2SSD:inst1.digit[1]
-digit[2] <= BCD2SSD:inst1.digit[2]
-digit[3] <= BCD2SSD:inst1.digit[3]
-segment[0] <= BCD2SSD:inst1.segment7[0]
-segment[1] <= BCD2SSD:inst1.segment7[1]
-segment[2] <= BCD2SSD:inst1.segment7[2]
-segment[3] <= BCD2SSD:inst1.segment7[3]
-segment[4] <= BCD2SSD:inst1.segment7[4]
-segment[5] <= BCD2SSD:inst1.segment7[5]
-segment[6] <= BCD2SSD:inst1.segment7[6]
+digit[0] <= BCD2SSD:inst10.digit[0]
+digit[1] <= BCD2SSD:inst10.digit[1]
+digit[2] <= BCD2SSD:inst10.digit[2]
+digit[3] <= BCD2SSD:inst10.digit[3]
+segment[0] <= BCD2SSD:inst10.segment7[0]
+segment[1] <= BCD2SSD:inst10.segment7[1]
+segment[2] <= BCD2SSD:inst10.segment7[2]
+segment[3] <= BCD2SSD:inst10.segment7[3]
+segment[4] <= BCD2SSD:inst10.segment7[4]
+segment[5] <= BCD2SSD:inst10.segment7[5]
+segment[6] <= BCD2SSD:inst10.segment7[6]
 
 
-|Group_16|BCD2SSD:inst1
+|Group_16|BCD2SSD:inst10
 clk => segment7[0]~reg0.CLK
 clk => segment7[1]~reg0.CLK
 clk => segment7[2]~reg0.CLK
@@ -85,32 +86,39 @@ digit[2] <= digit[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 digit[3] <= digit[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Group_16|shift_reg:inst8
-clk => buf[0]~reg0.CLK
-clk => buf[1]~reg0.CLK
-clk => buf[2]~reg0.CLK
-clk => buf[3]~reg0.CLK
-clk => buf[4]~reg0.CLK
-clk => buf[5]~reg0.CLK
-clk => buf[6]~reg0.CLK
-clk => buf[7]~reg0.CLK
-enable_shift => buf.OUTPUTSELECT
-enable_shift => buf.OUTPUTSELECT
-enable_shift => buf.OUTPUTSELECT
-enable_shift => buf.OUTPUTSELECT
-enable_shift => buf.OUTPUTSELECT
-enable_shift => buf.OUTPUTSELECT
-enable_shift => buf.OUTPUTSELECT
-enable_shift => buf.OUTPUTSELECT
-rx => buf.DATAB
-buf[0] <= buf[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-buf[1] <= buf[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-buf[2] <= buf[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-buf[3] <= buf[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-buf[4] <= buf[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-buf[5] <= buf[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-buf[6] <= buf[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-buf[7] <= buf[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|Group_16|disp_register:inst1
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+D[3] => Q.DATAB
+D[4] => Q.DATAB
+D[5] => Q.DATAB
+D[6] => Q.DATAB
+D[7] => Q.DATAB
+load => Q.OUTPUTSELECT
+load => Q.OUTPUTSELECT
+load => Q.OUTPUTSELECT
+load => Q.OUTPUTSELECT
+load => Q.OUTPUTSELECT
+load => Q.OUTPUTSELECT
+load => Q.OUTPUTSELECT
+load => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+clk => Q[4]~reg0.CLK
+clk => Q[5]~reg0.CLK
+clk => Q[6]~reg0.CLK
+clk => Q[7]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Group_16|fsm:inst
@@ -122,6 +130,7 @@ reset_S <= Selector4.DB_MAX_OUTPUT_PORT_TYPE
 enable_N <= enable_N.DB_MAX_OUTPUT_PORT_TYPE
 enable_S <= Selector5.DB_MAX_OUTPUT_PORT_TYPE
 enable_shift <= enable_shift.DB_MAX_OUTPUT_PORT_TYPE
+load <= load.DB_MAX_OUTPUT_PORT_TYPE
 cmp15_s => NS.DATAA
 cmp15_s => Selector0.IN3
 cmp15_s => reset_S.DATAA
@@ -192,5 +201,33 @@ n_cnt[0] <= n_cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 n_cnt[1] <= n_cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 n_cnt[2] <= n_cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 n_cnt[3] <= n_cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Group_16|shift_reg:inst8
+clk => buf[0]~reg0.CLK
+clk => buf[1]~reg0.CLK
+clk => buf[2]~reg0.CLK
+clk => buf[3]~reg0.CLK
+clk => buf[4]~reg0.CLK
+clk => buf[5]~reg0.CLK
+clk => buf[6]~reg0.CLK
+clk => buf[7]~reg0.CLK
+enable_shift => buf.OUTPUTSELECT
+enable_shift => buf.OUTPUTSELECT
+enable_shift => buf.OUTPUTSELECT
+enable_shift => buf.OUTPUTSELECT
+enable_shift => buf.OUTPUTSELECT
+enable_shift => buf.OUTPUTSELECT
+enable_shift => buf.OUTPUTSELECT
+enable_shift => buf.OUTPUTSELECT
+rx => buf.DATAB
+buf[0] <= buf[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[1] <= buf[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[2] <= buf[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[3] <= buf[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[4] <= buf[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[5] <= buf[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[6] <= buf[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+buf[7] <= buf[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
