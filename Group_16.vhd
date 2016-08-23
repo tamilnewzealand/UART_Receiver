@@ -1,5 +1,5 @@
 -- ELECTENG 209 UART_ Receiver
--- Last Edit: 2016/08/04
+-- Last Edit: 2016/08/12
 
 -------------------------------------------------------
 -----------            S Counter            -----------
@@ -221,6 +221,33 @@ begin
 end beh;
 
 -------------------------------------------------------
+-----------            Register             -----------
+-------------------------------------------------------
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity parallel_register is
+port(
+	parallel_in : in std_logic_vector(7 downto 0);
+	load, clk : in std_logic;
+	parallel_out: out std_logic_vector(7 downto 0)
+); end parallel_register;
+
+architecture beh of parallel_register is 
+
+begin
+	process (clk)
+	begin
+		if rising_edge(clk) then
+			if load = '1' then
+				parallel_out <= parallel_in;
+			end if;	
+		end if;
+	end process;
+end beh;	
+
+-------------------------------------------------------
 -----------               FSM               -----------
 -------------------------------------------------------
 
@@ -231,7 +258,7 @@ entity fsm is
 	port (
 		clk			:	in	std_logic;
 		rx				:	in std_logic;
-		reset_N, reset_S, enable_N, enable_S, enable_shift : out std_logic;
+		reset_N, reset_S, enable_N, enable_S, enable_shift, load : out std_logic;
 		cmp15_s, cmp7_s, cmp7_n : in std_logic);
 end entity;
 
@@ -239,7 +266,7 @@ end entity;
 
 architecture beh of fsm is
 
-	type my_states is (idle, start, data, stop);
+	type my_states is (idle, start, data, stop,finish);
 	signal CS, NS : my_states:= idle;
 
 begin
@@ -258,7 +285,7 @@ begin
 			
 	------------------------------------
 
-	NextState_logic: process (CS, NS)
+	NextState_logic: process (CS, rx, cmp15_s, cmp7_n, cmp7_s)
 		begin
 			case CS is
 				when idle =>
@@ -270,7 +297,7 @@ begin
 				when start =>
 					if (cmp7_s = '1' AND rx = '0') then
 						NS <= data;
-					elsif (cmp15_s = '1') then
+					elsif cmp15_s = '1' then
 						NS <= idle;
 					else
 						NS <= start;
@@ -285,20 +312,27 @@ begin
 					if cmp15_s = '0' then
 						NS <= stop;
 					else
+						NS <= finish;
+					end if;
+				when finish =>
+					if cmp7_s = '1' then
 						NS <= idle;
+					else
+						NS <= finish;
 					end if;
 			end case;
 	end process;
 
 	-----------------------------------------
 
-	Output_logic: process (CS)
+	Output_logic: process (CS, rx, cmp15_s, cmp7_n, cmp7_s)
 		begin
 		enable_shift <= '0';
 		reset_S <= '0';
 		reset_N <= '0';
 		enable_N <= '0';
 		enable_S <= '0';
+		load <= '0';
 			case CS is
 				when idle =>
 					if rx = '0' then
@@ -330,7 +364,13 @@ begin
 					if cmp15_s = '0' then
 						enable_S <= '1';
 					else
-						enable_shift <= '0';
+						enable_S <= '0';
+					end if;
+				when finish =>
+					if cmp7_s = '1' then
+						load <= '1';
+					else
+						enable_S <= '1';
 					end if;
 			end case;
 	end process;

@@ -96,7 +96,7 @@ TCK                          : 32        : input  : 3.3-V LVTTL       :         
 GND*                         : 33        :        :                   :         :           :                
 GND*                         : 34        :        :                   :         :           :                
 VCCIO                        : 35        : power  :                   : 3.3V    :           :                
-GND*                         : 36        :        :                   :         :           :                
+user_reserve_1               : 36        : input  : 3.3-V LVTTL       :         :           : Y              
 GND*                         : 37        :        :                   :         :           :                
 TDO                          : 38        : output : 3.3-V LVTTL       :         :           : N              
 GND*                         : 39        :        :                   :         :           :                

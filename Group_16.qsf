@@ -72,4 +72,6 @@ set_location_assignment PIN_6 -to segment[2]
 set_location_assignment PIN_5 -to segment[1]
 set_location_assignment PIN_4 -to segment[0]
 set_location_assignment PIN_24 -to rx
+set_location_assignment PIN_36 -to user_reserve_1
+set_instance_assignment -name RESERVE_PIN AS_INPUT_TRI_STATED -to user_reserve_1
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/WindowsUser/Documents/GitHub/UART_Receiver/Waveform.vwf"

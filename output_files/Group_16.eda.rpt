@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Group_16
-Sun Aug 07 21:22:56 2016
+Mon Aug 22 17:28:47 2016
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Aug 07 21:22:56 2016 ;
+; EDA Netlist Writer Status ; Successful - Mon Aug 22 17:28:47 2016 ;
 ; Revision Name             ; Group_16                              ;
 ; Top-level Entity Name     ; Group_16                              ;
 ; Family                    ; MAX7000AE                             ;
@@ -80,13 +80,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sun Aug 07 21:22:55 2016
+    Info: Processing started: Mon Aug 22 17:28:47 2016
 Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog UART_Design -c Group_16
 Info (204019): Generated file Group_16.vo in folder "C:/Users/WindowsUser/Documents/GitHub/UART_Receiver/simulation/qsim//" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 380 megabytes
-    Info: Processing ended: Sun Aug 07 21:22:56 2016
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Mon Aug 22 17:28:47 2016
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 

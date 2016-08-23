@@ -93,6 +93,13 @@ applicable agreement for further details.
 		(text "enable_shift" (rect 116 91 163 103)(font "Arial" ))
 		(line (pt 184 96)(pt 168 96)(line_width 1))
 	)
+	(port
+		(pt 184 112)
+		(output)
+		(text "load" (rect 0 0 15 12)(font "Arial" ))
+		(text "load" (rect 148 107 163 119)(font "Arial" ))
+		(line (pt 184 112)(pt 168 112)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 168 128)(line_width 1))
 	)
