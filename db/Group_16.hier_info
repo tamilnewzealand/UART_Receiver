@@ -6,6 +6,7 @@ clk => s_counter:inst7.clk
 clk => n_counter:inst6.clk
 clk => parallel_register:inst1.clk
 clk => shift_reg:inst8.clk
+clk => Counter2_VHDL:inst5.clk
 rx => fsm:inst.rx
 rx => shift_reg:inst8.rx
 digit[0] <= BCD2SSD:inst10.digit[0]
@@ -86,39 +87,32 @@ digit[2] <= digit[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 digit[3] <= digit[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Group_16|parallel_register:inst1
-parallel_in[0] => parallel_out.DATAB
-parallel_in[1] => parallel_out.DATAB
-parallel_in[2] => parallel_out.DATAB
-parallel_in[3] => parallel_out.DATAB
-parallel_in[4] => parallel_out.DATAB
-parallel_in[5] => parallel_out.DATAB
-parallel_in[6] => parallel_out.DATAB
-parallel_in[7] => parallel_out.DATAB
-load => parallel_out.OUTPUTSELECT
-load => parallel_out.OUTPUTSELECT
-load => parallel_out.OUTPUTSELECT
-load => parallel_out.OUTPUTSELECT
-load => parallel_out.OUTPUTSELECT
-load => parallel_out.OUTPUTSELECT
-load => parallel_out.OUTPUTSELECT
-load => parallel_out.OUTPUTSELECT
-clk => parallel_out[0]~reg0.CLK
-clk => parallel_out[1]~reg0.CLK
-clk => parallel_out[2]~reg0.CLK
-clk => parallel_out[3]~reg0.CLK
-clk => parallel_out[4]~reg0.CLK
-clk => parallel_out[5]~reg0.CLK
-clk => parallel_out[6]~reg0.CLK
-clk => parallel_out[7]~reg0.CLK
-parallel_out[0] <= parallel_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-parallel_out[1] <= parallel_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-parallel_out[2] <= parallel_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-parallel_out[3] <= parallel_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-parallel_out[4] <= parallel_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-parallel_out[5] <= parallel_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-parallel_out[6] <= parallel_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-parallel_out[7] <= parallel_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|Group_16|mux:inst9
+idle => bcd_out.IN0
+ina[0] => bcd_out.DATAB
+ina[1] => bcd_out.DATAB
+ina[2] => bcd_out.DATAB
+ina[3] => bcd_out.DATAB
+ina[4] => bcd_out.DATAB
+ina[5] => bcd_out.DATAB
+ina[6] => bcd_out.DATAB
+ina[7] => bcd_out.DATAB
+inb[0] => bcd_out.DATAA
+inb[1] => bcd_out.DATAA
+inb[2] => bcd_out.DATAA
+inb[3] => bcd_out.DATAA
+inb[4] => bcd_out.DATAA
+inb[5] => bcd_out.DATAA
+inb[6] => bcd_out.DATAA
+inb[7] => bcd_out.DATAA
+bcd_out[0] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[1] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[2] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[3] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[4] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[5] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[6] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[7] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Group_16|fsm:inst
@@ -131,6 +125,7 @@ enable_N <= enable_N.DB_MAX_OUTPUT_PORT_TYPE
 enable_S <= Selector6.DB_MAX_OUTPUT_PORT_TYPE
 enable_shift <= enable_shift.DB_MAX_OUTPUT_PORT_TYPE
 load <= load.DB_MAX_OUTPUT_PORT_TYPE
+sid <= sid.DB_MAX_OUTPUT_PORT_TYPE
 cmp15_s => NS.DATAA
 cmp15_s => Selector4.IN3
 cmp15_s => reset_S.DATAA
@@ -206,6 +201,41 @@ n_cnt[2] <= n_cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 n_cnt[3] <= n_cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|Group_16|parallel_register:inst1
+parallel_in[0] => parallel_out.DATAB
+parallel_in[1] => parallel_out.DATAB
+parallel_in[2] => parallel_out.DATAB
+parallel_in[3] => parallel_out.DATAB
+parallel_in[4] => parallel_out.DATAB
+parallel_in[5] => parallel_out.DATAB
+parallel_in[6] => parallel_out.DATAB
+parallel_in[7] => parallel_out.DATAB
+load => parallel_out.OUTPUTSELECT
+load => parallel_out.OUTPUTSELECT
+load => parallel_out.OUTPUTSELECT
+load => parallel_out.OUTPUTSELECT
+load => parallel_out.OUTPUTSELECT
+load => parallel_out.OUTPUTSELECT
+load => parallel_out.OUTPUTSELECT
+load => parallel_out.OUTPUTSELECT
+clk => parallel_out[0]~reg0.CLK
+clk => parallel_out[1]~reg0.CLK
+clk => parallel_out[2]~reg0.CLK
+clk => parallel_out[3]~reg0.CLK
+clk => parallel_out[4]~reg0.CLK
+clk => parallel_out[5]~reg0.CLK
+clk => parallel_out[6]~reg0.CLK
+clk => parallel_out[7]~reg0.CLK
+parallel_out[0] <= parallel_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+parallel_out[1] <= parallel_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+parallel_out[2] <= parallel_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+parallel_out[3] <= parallel_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+parallel_out[4] <= parallel_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+parallel_out[5] <= parallel_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+parallel_out[6] <= parallel_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+parallel_out[7] <= parallel_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |Group_16|shift_reg:inst8
 clk => buf[0]~reg0.CLK
 clk => buf[1]~reg0.CLK
@@ -232,5 +262,32 @@ buf[4] <= buf[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 buf[5] <= buf[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 buf[6] <= buf[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 buf[7] <= buf[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Group_16|Counter2_VHDL:inst5
+clk => temp[0].CLK
+clk => temp[1].CLK
+clk => temp[2].CLK
+clk => temp[3].CLK
+clk => temp[4].CLK
+clk => temp[5].CLK
+clk => temp[6].CLK
+clk => temp[7].CLK
+clk => bcd_out[0]~reg0.CLK
+clk => bcd_out[1]~reg0.CLK
+clk => bcd_out[2]~reg0.CLK
+clk => bcd_out[3]~reg0.CLK
+clk => bcd_out[4]~reg0.CLK
+clk => bcd_out[5]~reg0.CLK
+clk => bcd_out[6]~reg0.CLK
+clk => bcd_out[7]~reg0.CLK
+bcd_out[0] <= bcd_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[1] <= bcd_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[2] <= bcd_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[3] <= bcd_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[4] <= bcd_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[5] <= bcd_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[6] <= bcd_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[7] <= bcd_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
