@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Group_16
-Fri Aug 19 12:17:50 2016
+Fri Aug 26 12:56:40 2016
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -14,8 +14,10 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |Group_16|fsm:inst|CS
-  9. Parameter Settings for Inferred Entity Instance: n_counter:inst6|lpm_counter:n_cnt_rtl_0
- 10. Analysis & Synthesis Messages
+  9. Registers Removed During Synthesis
+ 10. Parameter Settings for Inferred Entity Instance: n_counter:inst6|lpm_counter:n_cnt_rtl_0
+ 11. Parameter Settings for Inferred Entity Instance: Counter2_VHDL:inst5|lpm_add_sub:Add0
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -41,12 +43,12 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri Aug 19 12:17:50 2016      ;
+; Analysis & Synthesis Status ; Successful - Fri Aug 26 12:56:40 2016      ;
 ; Quartus II 64-Bit Version   ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name               ; Group_16                                   ;
 ; Top-level Entity Name       ; Group_16                                   ;
 ; Family                      ; MAX7000AE                                  ;
-; Total macrocells            ; 40                                         ;
+; Total macrocells            ; 57                                         ;
 ; Total pins                  ; 14                                         ;
 +-----------------------------+--------------------------------------------+
 
@@ -143,6 +145,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; dffeea.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/dffeea.inc              ;         ;
 ; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/alt_counter_stratix.inc ;         ;
 ; aglobal130.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; addcore.tdf                      ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/addcore.tdf             ;         ;
+; a_csnbuffer.inc                  ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/a_csnbuffer.inc         ;         ;
+; a_csnbuffer.tdf                  ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/a_csnbuffer.tdf         ;         ;
+; look_add.tdf                     ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/look_add.tdf            ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/altshift.tdf            ;         ;
 +----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+---------+
 
 
@@ -151,14 +164,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 40                   ;
-; Total registers      ; 38                   ;
+; Logic cells          ; 57                   ;
+; Total registers      ; 51                   ;
 ; I/O pins             ; 14                   ;
-; Parallel expanders   ; 2                    ;
+; Shareable expanders  ; 3                    ;
+; Parallel expanders   ; 6                    ;
 ; Maximum fan-out node ; clk                  ;
-; Maximum fan-out      ; 38                   ;
-; Total fan-out        ; 311                  ;
-; Average fan-out      ; 5.76                 ;
+; Maximum fan-out      ; 51                   ;
+; Total fan-out        ; 483                  ;
+; Average fan-out      ; 6.53                 ;
 +----------------------+----------------------+
 
 
@@ -167,8 +181,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------+------------+------+---------------------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; Macrocells ; Pins ; Full Hierarchy Name                               ; Library Name ;
 +---------------------------------+------------+------+---------------------------------------------------+--------------+
-; |Group_16                       ; 40         ; 14   ; |Group_16                                         ; work         ;
-;    |BCD2SSD:inst10|             ; 12         ; 0    ; |Group_16|BCD2SSD:inst10                          ; work         ;
+; |Group_16                       ; 57         ; 14   ; |Group_16                                         ; work         ;
+;    |BCD2SSD:inst10|             ; 16         ; 0    ; |Group_16|BCD2SSD:inst10                          ; work         ;
+;    |Counter2_VHDL:inst5|        ; 13         ; 0    ; |Group_16|Counter2_VHDL:inst5                     ; work         ;
 ;    |fsm:inst|                   ; 3          ; 0    ; |Group_16|fsm:inst                                ; work         ;
 ;    |n_counter:inst6|            ; 4          ; 0    ; |Group_16|n_counter:inst6                         ; work         ;
 ;       |lpm_counter:n_cnt_rtl_0| ; 4          ; 0    ; |Group_16|n_counter:inst6|lpm_counter:n_cnt_rtl_0 ; work         ;
@@ -190,6 +205,17 @@ Encoding Type:  Minimal Bits
 ; CS.stop   ; 0              ; 1              ; 1              ;
 ; CS.finish ; 1              ; 1              ; 0              ;
 +-----------+----------------+----------------+----------------+
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++---------------------------------------+--------------------------------------------+
+; Register name                         ; Reason for Removal                         ;
++---------------------------------------+--------------------------------------------+
+; Counter2_VHDL:inst5|bcd_out[0]        ; Stuck at GND due to stuck port data_in     ;
+; Counter2_VHDL:inst5|bcd_out[3]        ; Merged with Counter2_VHDL:inst5|bcd_out[1] ;
+; Total Number of Removed Registers = 2 ;                                            ;
++---------------------------------------+--------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------+
@@ -219,16 +245,45 @@ Encoding Type:  Minimal Bits
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Counter2_VHDL:inst5|lpm_add_sub:Add0 ;
++------------------------+-------------+------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                           ;
++------------------------+-------------+------------------------------------------------+
+; LPM_WIDTH              ; 8           ; Untyped                                        ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                        ;
+; LPM_DIRECTION          ; ADD         ; Untyped                                        ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                        ;
+; LPM_PIPELINE           ; 0           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                        ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                                        ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                        ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                             ;
+; DEVICE_FAMILY          ; MAX7000AE   ; Untyped                                        ;
+; USE_WYS                ; OFF         ; Untyped                                        ;
+; STYLE                  ; FAST        ; Untyped                                        ;
+; CBXI_PARAMETER         ; add_sub_eqh ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                 ;
++------------------------+-------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Fri Aug 19 12:17:47 2016
+    Info: Processing started: Fri Aug 26 12:56:37 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART_Design -c Group_16
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 18 design units, including 9 entities, in source file group_16.vhd
+Warning (12090): Entity "mux" obtained from "Group_16.vhd" instead of from Quartus II megafunction library
+Info (12021): Found 22 design units, including 11 entities, in source file group_16.vhd
     Info (12022): Found design unit 1: s_counter-beh
     Info (12022): Found design unit 2: n_counter-beh
     Info (12022): Found design unit 3: s_comp_7-beh
@@ -237,7 +292,9 @@ Info (12021): Found 18 design units, including 9 entities, in source file group_
     Info (12022): Found design unit 6: shift_reg-beh
     Info (12022): Found design unit 7: BCD2SSD-beh
     Info (12022): Found design unit 8: parallel_register-beh
-    Info (12022): Found design unit 9: fsm-beh
+    Info (12022): Found design unit 9: Counter2_VHDL-beh
+    Info (12022): Found design unit 10: mux-beh
+    Info (12022): Found design unit 11: fsm-beh
     Info (12023): Found entity 1: s_counter
     Info (12023): Found entity 2: n_counter
     Info (12023): Found entity 3: s_comp_7
@@ -246,35 +303,56 @@ Info (12021): Found 18 design units, including 9 entities, in source file group_
     Info (12023): Found entity 6: shift_reg
     Info (12023): Found entity 7: BCD2SSD
     Info (12023): Found entity 8: parallel_register
-    Info (12023): Found entity 9: fsm
+    Info (12023): Found entity 9: Counter2_VHDL
+    Info (12023): Found entity 10: mux
+    Info (12023): Found entity 11: fsm
 Info (12021): Found 1 design units, including 1 entities, in source file group_16.bdf
     Info (12023): Found entity 1: Group_16
 Info (12127): Elaborating entity "Group_16" for the top level hierarchy
 Info (12128): Elaborating entity "BCD2SSD" for hierarchy "BCD2SSD:inst10"
-Info (12128): Elaborating entity "parallel_register" for hierarchy "parallel_register:inst1"
+Info (12128): Elaborating entity "mux" for hierarchy "mux:inst9"
 Info (12128): Elaborating entity "fsm" for hierarchy "fsm:inst"
 Info (12128): Elaborating entity "s_comp_15" for hierarchy "s_comp_15:inst4"
 Info (12128): Elaborating entity "s_counter" for hierarchy "s_counter:inst7"
 Info (12128): Elaborating entity "s_comp_7" for hierarchy "s_comp_7:inst3"
 Info (12128): Elaborating entity "n_comp_7" for hierarchy "n_comp_7:inst2"
 Info (12128): Elaborating entity "n_counter" for hierarchy "n_counter:inst6"
+Info (12128): Elaborating entity "parallel_register" for hierarchy "parallel_register:inst1"
 Info (12128): Elaborating entity "shift_reg" for hierarchy "shift_reg:inst8"
+Info (12128): Elaborating entity "Counter2_VHDL" for hierarchy "Counter2_VHDL:inst5"
 Info (19000): Inferred 1 megafunctions from design logic
     Info (19001): Inferred lpm_counter megafunction (LPM_WIDTH=4) from the following logic: "n_counter:inst6|n_cnt_rtl_0"
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Counter2_VHDL:inst5|Add0"
 Info (12130): Elaborated megafunction instantiation "n_counter:inst6|lpm_counter:n_cnt_rtl_0"
 Info (12133): Instantiated megafunction "n_counter:inst6|lpm_counter:n_cnt_rtl_0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "4"
     Info (12134): Parameter "LPM_DIRECTION" = "UP"
     Info (12134): Parameter "LPM_TYPE" = "LPM_COUNTER"
+Info (12130): Elaborated megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0"
+Info (12133): Instantiated megafunction "Counter2_VHDL:inst5|lpm_add_sub:Add0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+    Info (12134): Parameter "LPM_DIRECTION" = "ADD"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
+Info (12131): Elaborated megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0|addcore:adder[0]", which is child of megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0"
+Info (12131): Elaborated megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0|addcore:adder[0]|a_csnbuffer:oflow_node", which is child of megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0"
+Info (12131): Elaborated megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0|addcore:adder[0]|a_csnbuffer:result_node", which is child of megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0"
+Info (12131): Elaborated megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0|look_add:look_ahead_unit", which is child of megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0"
+Info (12131): Elaborated megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0"
+Info (12131): Elaborated megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "Counter2_VHDL:inst5|lpm_add_sub:Add0"
+Info (13014): Ignored 8 buffer(s)
+    Info (13019): Ignored 8 SOFT buffer(s)
 Info (280013): Promoted pin-driven signal(s) to global signal
     Info (280014): Promoted clock signal driven by pin "clk" to global clock signal
-Info (21057): Implemented 54 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 74 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 12 output pins
-    Info (21063): Implemented 40 macrocells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 505 megabytes
-    Info: Processing ended: Fri Aug 19 12:17:50 2016
+    Info (21063): Implemented 57 macrocells
+    Info (21073): Implemented 3 shareable expanders
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 509 megabytes
+    Info: Processing ended: Fri Aug 26 12:56:40 2016
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
