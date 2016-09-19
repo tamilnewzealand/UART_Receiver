@@ -1,5 +1,5 @@
 -- ELECTENG 209 UART_ Receiver
--- Last Edit: 2016/08/12
+-- Last Edit: 2016/09/19
 
 -------------------------------------------------------
 -----------            S Counter            -----------
@@ -209,8 +209,8 @@ begin
 					when "1000"=> segment7 <="1111111";
 					when "1001"=> segment7 <="1101111";
 					when "1010"=> segment7 <="1110111";
-					when "1011"=> segment7 <="1111100";
-					when "1100"=> segment7 <="0111001";
+					when "1011"=> segment7 <="0111110";
+					when "1100"=> segment7 <="1110011";
 					when "1101"=> segment7 <="1011110";
 					when "1110"=> segment7 <="1111011";
 					when "1111"=> segment7 <="1110001";
@@ -247,61 +247,6 @@ begin
 	end process;
 end beh;	
 
-------------------------------------------------------
-------------------- Counter 2 ------------------------
-------------------------------------------------------
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
-
-entity Counter2_VHDL is
-   port(clk: in std_logic;
-		  bcd_out: out std_logic_vector(7 downto 0));
-end Counter2_VHDL;
-
-architecture beh of Counter2_VHDL is
-   signal temp: std_logic_vector(7 downto 0);
-begin
-	process(clk)
-   begin
-      if rising_edge(clk) then
-			case temp is
-				when x"00"=> bcd_out <=x"6E";
-				when x"01"=> bcd_out <=x"4A";
-				when x"02"=> bcd_out <=x"3A";
-				when others=> bcd_out <=x"00";
-			end case;
-			if temp=x"02" then
-				temp<=x"00";
-			else
-				temp <= temp + 1;
-			end if;
-      end if;
-   end process;
-end beh;
-
--------------------------------------------------------
------------               MUX               -----------
--------------------------------------------------------
-
-library ieee;
-use ieee.std_logic_1164.all;
-
-entity mux is
-	port (
-		idle			:	in	std_logic;
-		ina,inb		:	in std_logic_vector(7 downto 0);
-		bcd_out		: out std_logic_vector(7 downto 0));
-end entity;
-
-
-architecture beh of mux is
-begin
-	with idle select bcd_out <= ina when '0', inb when '1';
-end architecture;
-
 -------------------------------------------------------
 -----------               FSM               -----------
 -------------------------------------------------------
@@ -313,7 +258,7 @@ entity fsm is
 	port (
 		clk			:	in	std_logic;
 		rx				:	in std_logic;
-		reset_N, reset_S, enable_N, enable_S, enable_shift, load, sid : out std_logic;
+		reset_N, reset_S, enable_N, enable_S, enable_shift, load: out std_logic;
 		cmp15_s, cmp7_s, cmp7_n : in std_logic);
 end entity;
 
@@ -395,7 +340,6 @@ begin
 					else
 						reset_S <= '0';
 					end if;
-					sid <= '1';
 				when start =>
 					if cmp7_s = '1' then
 						reset_S <= '1';
@@ -405,7 +349,6 @@ begin
 					else
 						enable_S <= '1';
 					end if;
-					sid <= '0';
 				when data =>
 					if (cmp7_n = '1' AND cmp15_s = '1') then
 						reset_S <= '1';
@@ -417,21 +360,18 @@ begin
 					else
 						enable_S <= '1';
 					end if;
-					sid <= '0';
 				when stop =>
 					if cmp15_s = '0' then
 						enable_S <= '1';
 					else
 						enable_S <= '0';
 					end if;
-					sid <= '0';
 				when finish =>
 					if cmp7_s = '1' then
 						load <= '1';
 					else
 						enable_S <= '1';
 					end if;
-					sid <= '0';
 			end case;
 	end process;
 end beh;

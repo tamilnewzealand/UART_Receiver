@@ -1,9 +1,9 @@
-Fitter Status : Successful - Fri Aug 26 12:56:42 2016
+Fitter Status : Successful - Mon Sep 19 16:03:39 2016
 Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
 Revision Name : Group_16
 Top-level Entity Name : Group_16
 Family : MAX7000AE
 Device : EPM7064AELC44-10
 Timing Models : Final
-Total macrocells : 57 / 64 ( 89 % )
+Total macrocells : 40 / 64 ( 63 % )
 Total pins : 19 / 36 ( 53 % )
