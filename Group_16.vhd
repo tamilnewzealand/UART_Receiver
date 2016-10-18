@@ -1,5 +1,5 @@
 -- ELECTENG 209 UART_ Receiver
--- Last Edit: 2016/09/19
+-- Last Edit: 2016/08/12
 
 -------------------------------------------------------
 -----------            S Counter            -----------
@@ -258,7 +258,7 @@ entity fsm is
 	port (
 		clk			:	in	std_logic;
 		rx				:	in std_logic;
-		reset_N, reset_S, enable_N, enable_S, enable_shift, load: out std_logic;
+		reset_N, reset_S, enable_N, enable_S, enable_shift, load : out std_logic;
 		cmp15_s, cmp7_s, cmp7_n : in std_logic);
 end entity;
 

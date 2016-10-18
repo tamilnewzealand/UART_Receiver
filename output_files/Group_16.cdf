@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EPM7064AEL44) Path("C:/Users/WindowsUser/Documents/GitHub/UART_Receiver/output_files/") File("Group_16.pof") MfrSpec(OpMask(3));
+		Device PartName(EPM7064AEL44) Path("C:/Users/WindowsUser/Desktop/UART_Receiver-f893cc642a828e4008a907f799fb8db84eeac117/output_files/") File("Group_16.pof") MfrSpec(OpMask(3));
 
 ChainEnd;
 

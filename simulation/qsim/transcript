@@ -21,8 +21,6 @@
 # Loading max7000ae_ver.max_mcell
 # Loading max7000ae_ver.max_asynch_mcell
 # Loading max7000ae_ver.max_mcell_register
-# Loading max7000ae_ver.max_sexp
-# Loading max7000ae_ver.max_asynch_sexp
 # Loading work.Group_16_vlg_sample_tst
 # Loading work.Group_16_vlg_check_tst
 # Simulation passed !

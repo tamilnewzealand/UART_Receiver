@@ -1,5 +1,5 @@
 Flow report for Group_16
-Mon Sep 19 16:03:45 2016
+Sun Oct 16 20:12:30 2016
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +---------------------------+--------------------------------------------+
-; Flow Status               ; Successful - Mon Sep 19 16:03:45 2016      ;
+; Flow Status               ; Successful - Sun Oct 16 20:12:30 2016      ;
 ; Quartus II 64-Bit Version ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name             ; Group_16                                   ;
 ; Top-level Entity Name     ; Group_16                                   ;
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/19/2016 16:03:36 ;
+; Start date & time ; 10/16/2016 20:12:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Group_16            ;
 +-------------------+---------------------+
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +-------------------------------------+----------------------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                                ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 241955399645626.147425781608768                                      ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 241955399645626.147660193901332                                      ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                                   ; --            ; --          ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR       ; C:/Users/WindowsUser/Documents/GitHub/UART_Receiver/simulation/qsim/ ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                          ; --            ; --          ; eda_simulation ;
@@ -86,12 +86,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 505 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:00     ; 1.0                     ; 565 MB              ; 00:00:01                           ;
-; Assembler                 ; 00:00:00     ; 1.0                     ; 400 MB              ; 00:00:00                           ;
-; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 393 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 495 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:01     ; 1.0                     ; 565 MB              ; 00:00:01                           ;
+; Assembler                 ; 00:00:00     ; 1.0                     ; 401 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 394 MB              ; 00:00:01                           ;
 ; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 356 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:01     ; --                      ; --                  ; 00:00:04                           ;
+; Total                     ; 00:00:05     ; --                      ; --                  ; 00:00:05                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
