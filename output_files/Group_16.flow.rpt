@@ -1,5 +1,5 @@
 Flow report for Group_16
-Tue Oct 18 15:25:26 2016
+Tue Oct 18 20:59:32 2016
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +---------------------------+--------------------------------------------+
-; Flow Status               ; Successful - Tue Oct 18 15:25:26 2016      ;
+; Flow Status               ; Successful - Tue Oct 18 20:59:32 2016      ;
 ; Quartus II 64-Bit Version ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name             ; Group_16                                   ;
 ; Top-level Entity Name     ; Group_16                                   ;
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/18/2016 15:25:14 ;
+; Start date & time ; 10/18/2016 20:59:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Group_16            ;
 +-------------------+---------------------+
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +-------------------------------------+----------------------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                                ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 141812758189699.147675751410952                                      ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 241955399645626.147677756106064                                      ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                                   ; --            ; --          ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR       ; C:/Users/WindowsUser/Documents/GitHub/UART_Receiver/simulation/qsim/ ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                          ; --            ; --          ; eda_simulation ;
@@ -86,12 +86,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 489 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:01     ; 1.0                     ; 474 MB              ; 00:00:01                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 390 MB              ; 00:00:00                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 372 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 346 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:08     ; --                      ; --                  ; 00:00:03                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 514 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:02     ; 1.0                     ; 565 MB              ; 00:00:01                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 400 MB              ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 393 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 356 MB              ; 00:00:00                           ;
+; Total                     ; 00:00:08     ; --                      ; --                  ; 00:00:04                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -100,11 +100,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DELTA            ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DELTA            ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DELTA            ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DELTA            ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; DELTA            ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; Windows-PC       ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; Windows-PC       ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; Windows-PC       ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Windows-PC       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; Windows-PC       ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
